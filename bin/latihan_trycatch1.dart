@@ -1,16 +1,39 @@
-
 import 'dart:convert';
 
 import 'package:http/http.dart' as http;
-void main () async {
+
+void main() async {
   //fungsi future tanpa pengembalian nilai
-  Future<void> tarikData () async {
-    var respone = await http.get(Uri.parse('https://jsonplaceholder.typicode.com/comments')
-    );
+  Future<dynamic> tarikData() async {
+    var respone = await http
+        .get(Uri.parse('https://jsonplaceholder.typicode.com/comments'));
     var data = jsonDecode(respone.body);
-    print(data);
+    return (data);
   }
 
-  //POIN buat future dengan pengembalian nilai dengan contoh diatas (2 orang)
-  await tarikData();
+  var data = await tarikData();
+  // print('--------------------------');
+  // print('data Comment');
+  // print('--------------------------');
+  // for (var i = 0; i < data.length; i++) {
+  //   print('${data[i]['name']} | ${data[i]['email']}');
+  //   print('--------------------------');
+
+  //for in
+  // print('--------------------------');
+  // print('data Comment');
+  // print('--------------------------');
+  // for (var comment in data) {
+  //   print('${comment['name']} | ${comment['email']}');
+  //   print('--------------------------');
+  // };
+
+  //fOR EACH
+  print('--------------------------');
+  print('data Comment');
+  print('--------------------------');
+  data.forEach ((comment) {
+    print('${comment['name']} | ${comment['email']}');
+    print('--------------------------');
+  });
 }
