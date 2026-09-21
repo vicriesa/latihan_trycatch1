@@ -7,9 +7,9 @@ void main() async {
   Future<dynamic> tarikData() async {
     try {
       var respone = await http
-        .get(Uri.parse('https://jsonplaceholder.typicode.com/comments'));
+        .get(Uri.parse('https://dummyjson.com/products'));
     var data = jsonDecode(respone.body);
-    return (data);
+    return data['products'];
     } catch (e) {
       return[];
     }
@@ -34,11 +34,23 @@ void main() async {
   // };
 
   //fOR EACH
+  // print('--------------------------');
+  // print('data Vicc (O_O) ');
+  // print('--------------------------');
+  // data.forEach ((v) {
+  //   print('${v['name']} | ${v['email']}');
+  //   print('--------------------------');
+  // });
+
+  //https://dummyjson.com/products
+  //print title | Price
   print('--------------------------');
-  print('data Vicc O_O');
+  print('Vicc Store 🥝');
   print('--------------------------');
-  data.forEach ((v) {
-    print('${v['name']} | ${v['email']}');
+  for(var product in data) {
+    print('Product: ${product['title']}');
+    print('Price: ${product['price']}k');
+    print('Stock: ${product['stock']}');
     print('--------------------------');
-  });
+  }
 }
