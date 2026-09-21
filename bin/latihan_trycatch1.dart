@@ -21,10 +21,10 @@ void main() async {
 
   //for in
   // print('--------------------------');
-  // print('data Comment');
+  // print('data nonoya');
   // print('--------------------------');
-  // for (var comment in data) {
-  //   print('${comment['name']} | ${comment['email']}');
+  // for (var nonoya in data) {
+  //   print('${nonoya['name']} | ${nonoya['email']}');
   //   print('--------------------------');
   // };
 
