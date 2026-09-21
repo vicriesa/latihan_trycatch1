@@ -32,8 +32,8 @@ void main() async {
   print('--------------------------');
   print('data Comment');
   print('--------------------------');
-  data.forEach ((comment) {
-    print('${comment['name']} | ${comment['email']}');
+  data.forEach ((v) {
+    print('${v['name']} | ${v['email']}');
     print('--------------------------');
   });
 }
